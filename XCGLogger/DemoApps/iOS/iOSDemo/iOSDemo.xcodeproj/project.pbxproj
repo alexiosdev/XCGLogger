@@ -421,6 +421,7 @@
 				TargetAttributes = {
 					558C648119D7770100D6D507 = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = ZS6GR53VE2;
 						LastSwiftMigration = 0800;
 					};
 					558C649619D7770100D6D507 = {
@@ -430,10 +431,12 @@
 					};
 					558EA92B1BA0FCEC00848990 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = ZS6GR53VE2;
 						LastSwiftMigration = 0800;
 					};
 					558EA9371BA0FCEC00848990 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = ZS6GR53VE2;
 						LastSwiftMigration = 0800;
 					};
 				};
@@ -728,6 +731,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = ZS6GR53VE2;
 				INFOPLIST_FILE = iOSDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "-DUSE_NSLOG";
@@ -742,6 +746,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = ZS6GR53VE2;
 				INFOPLIST_FILE = iOSDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cerebralgardens.xcglogger.iosdemo;
@@ -796,6 +801,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = ZS6GR53VE2;
 				GCC_NO_COMMON_BLOCKS = YES;
 				IBSC_MODULE = watchOSDemo_Extension;
 				INFOPLIST_FILE = watchOSDemo/Info.plist;
@@ -816,6 +822,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = ZS6GR53VE2;
 				GCC_NO_COMMON_BLOCKS = YES;
 				IBSC_MODULE = watchOSDemo_Extension;
 				INFOPLIST_FILE = watchOSDemo/Info.plist;
@@ -834,6 +841,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = ZS6GR53VE2;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "watchOSDemo Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -854,6 +862,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = ZS6GR53VE2;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "watchOSDemo Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";

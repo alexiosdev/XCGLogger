@@ -270,9 +270,8 @@ public class XCGFileLogDestination: XCGBaseLogDestination {
             closeFile()
         }
         
-        if let writeToFileURL = writeToFileURL,
-            let path = writeToFileURL.path {
-            
+        if let writeToFileURL = writeToFileURL {
+            let path = writeToFileURL.path
             FileManager.default.createFile(atPath: path, contents: nil, attributes: nil)
             do {
                 logFileHandle = try FileHandle(forWritingTo: writeToFileURL)
@@ -593,7 +592,7 @@ public class XCGLogger: CustomDebugStringConvertible {
         self.defaultInstance().logln(logLevel, functionName: functionName, fileName: fileName, lineNumber: lineNumber, closure: closure)
     }
     
-    public class func logln(_ logLevel: LogLevel = .debug, functionName: String = #function, fileName: String = #file, lineNumber: Int = #line, closure: @noescape () -> String?) {
+    public class func logln(_ logLevel: LogLevel = .debug, functionName: String = #function, fileName: String = #file, lineNumber: Int = #line, closure: () -> String?) {
         self.defaultInstance().logln(logLevel, functionName: functionName, fileName: fileName, lineNumber: lineNumber, closure: closure)
     }
     
@@ -601,7 +600,7 @@ public class XCGLogger: CustomDebugStringConvertible {
         self.logln(logLevel, functionName: functionName, fileName: fileName, lineNumber: lineNumber, closure: closure)
     }
     
-    public func logln(_ logLevel: LogLevel = .debug, functionName: String = #function, fileName: String = #file, lineNumber: Int = #line, closure: @noescape () -> String?) {
+    public func logln(_ logLevel: LogLevel = .debug, functionName: String = #function, fileName: String = #file, lineNumber: Int = #line, closure: () -> String?) {
         var logDetails: XCGLogDetails? = nil
         for logDestination in self.logDestinations {
             if (logDestination.isEnabledForLogLevel(logLevel)) {
@@ -667,7 +666,7 @@ public class XCGLogger: CustomDebugStringConvertible {
         self.defaultInstance().logln(.verbose, functionName: functionName, fileName: fileName, lineNumber: lineNumber, closure: closure)
     }
     
-    public class func verbose(_ functionName: String = #function, fileName: String = #file, lineNumber: Int = #line, closure: @noescape () -> String?) {
+    public class func verbose(_ functionName: String = #function, fileName: String = #file, lineNumber: Int = #line, closure: () -> String?) {
         self.defaultInstance().logln(.verbose, functionName: functionName, fileName: fileName, lineNumber: lineNumber, closure: closure)
     }
     
@@ -675,7 +674,7 @@ public class XCGLogger: CustomDebugStringConvertible {
         self.logln(.verbose, functionName: functionName, fileName: fileName, lineNumber: lineNumber, closure: closure)
     }
     
-    public func verbose(_ functionName: String = #function, fileName: String = #file, lineNumber: Int = #line,closure: @noescape () -> String?) {
+    public func verbose(_ functionName: String = #function, fileName: String = #file, lineNumber: Int = #line,closure: () -> String?) {
         self.logln(.verbose, functionName: functionName, fileName: fileName, lineNumber: lineNumber, closure: closure)
     }
     
@@ -684,7 +683,7 @@ public class XCGLogger: CustomDebugStringConvertible {
         self.defaultInstance().logln(.debug, functionName: functionName, fileName: fileName, lineNumber: lineNumber, closure: closure)
     }
     
-    public class func debug(_ functionName: String = #function, fileName: String = #file, lineNumber: Int = #line, closure: @noescape () -> String?) {
+    public class func debug(_ functionName: String = #function, fileName: String = #file, lineNumber: Int = #line, closure: () -> String?) {
         self.defaultInstance().logln(.debug, functionName: functionName, fileName: fileName, lineNumber: lineNumber, closure: closure)
     }
     
@@ -692,7 +691,7 @@ public class XCGLogger: CustomDebugStringConvertible {
         self.logln(.debug, functionName: functionName, fileName: fileName, lineNumber: lineNumber, closure: closure)
     }
     
-    public func debug(_ functionName: String = #function, fileName: String = #file, lineNumber: Int = #line, closure: @noescape () -> String?) {
+    public func debug(_ functionName: String = #function, fileName: String = #file, lineNumber: Int = #line, closure: () -> String?) {
         self.logln(.debug, functionName: functionName, fileName: fileName, lineNumber: lineNumber, closure: closure)
     }
     
@@ -701,7 +700,7 @@ public class XCGLogger: CustomDebugStringConvertible {
         self.defaultInstance().logln(.info, functionName: functionName, fileName: fileName, lineNumber: lineNumber, closure: closure)
     }
     
-    public class func info(_ functionName: String = #function, fileName: String = #file, lineNumber: Int = #line, closure: @noescape () -> String?) {
+    public class func info(_ functionName: String = #function, fileName: String = #file, lineNumber: Int = #line, closure: () -> String?) {
         self.defaultInstance().logln(.info, functionName: functionName, fileName: fileName, lineNumber: lineNumber, closure: closure)
     }
     
@@ -709,7 +708,7 @@ public class XCGLogger: CustomDebugStringConvertible {
         self.logln(.info, functionName: functionName, fileName: fileName, lineNumber: lineNumber, closure: closure)
     }
     
-    public func info(_ functionName: String = #function, fileName: String = #file, lineNumber: Int = #line, closure: @noescape () -> String?) {
+    public func info(_ functionName: String = #function, fileName: String = #file, lineNumber: Int = #line, closure: () -> String?) {
         self.logln(.info, functionName: functionName, fileName: fileName, lineNumber: lineNumber, closure: closure)
     }
     
@@ -718,7 +717,7 @@ public class XCGLogger: CustomDebugStringConvertible {
         self.defaultInstance().logln(.warning, functionName: functionName, fileName: fileName, lineNumber: lineNumber, closure: closure)
     }
     
-    public class func warning(_ functionName: String = #function, fileName: String = #file, lineNumber: Int = #line, closure: @noescape () -> String?) {
+    public class func warning(_ functionName: String = #function, fileName: String = #file, lineNumber: Int = #line, closure: () -> String?) {
         self.defaultInstance().logln(.warning, functionName: functionName, fileName: fileName, lineNumber: lineNumber, closure: closure)
     }
     
@@ -726,7 +725,7 @@ public class XCGLogger: CustomDebugStringConvertible {
         self.logln(.warning, functionName: functionName, fileName: fileName, lineNumber: lineNumber, closure: closure)
     }
     
-    public func warning(_ functionName: String = #function, fileName: String = #file, lineNumber: Int = #line, closure: @noescape () -> String?) {
+    public func warning(_ functionName: String = #function, fileName: String = #file, lineNumber: Int = #line, closure: () -> String?) {
         self.logln(.warning, functionName: functionName, fileName: fileName, lineNumber: lineNumber, closure: closure)
     }
     
@@ -735,7 +734,7 @@ public class XCGLogger: CustomDebugStringConvertible {
         self.defaultInstance().logln(.error, functionName: functionName, fileName: fileName, lineNumber: lineNumber, closure: closure)
     }
     
-    public class func error(_ functionName: String = #function, fileName: String = #file, lineNumber: Int = #line, closure: @noescape () -> String?) {
+    public class func error(_ functionName: String = #function, fileName: String = #file, lineNumber: Int = #line, closure: () -> String?) {
         self.defaultInstance().logln(.error, functionName: functionName, fileName: fileName, lineNumber: lineNumber, closure: closure)
     }
     
@@ -743,7 +742,7 @@ public class XCGLogger: CustomDebugStringConvertible {
         self.logln(.error, functionName: functionName, fileName: fileName, lineNumber: lineNumber, closure: closure)
     }
     
-    public func error(_ functionName: String = #function, fileName: String = #file, lineNumber: Int = #line, closure: @noescape () -> String?) {
+    public func error(_ functionName: String = #function, fileName: String = #file, lineNumber: Int = #line, closure: () -> String?) {
         self.logln(.error, functionName: functionName, fileName: fileName, lineNumber: lineNumber, closure: closure)
     }
     
@@ -752,7 +751,7 @@ public class XCGLogger: CustomDebugStringConvertible {
         self.defaultInstance().logln(.severe, functionName: functionName, fileName: fileName, lineNumber: lineNumber, closure: closure)
     }
     
-    public class func severe(_ functionName: String = #function, fileName: String = #file, lineNumber: Int = #line, closure: @noescape () -> String?) {
+    public class func severe(_ functionName: String = #function, fileName: String = #file, lineNumber: Int = #line, closure: () -> String?) {
         self.defaultInstance().logln(.severe, functionName: functionName, fileName: fileName, lineNumber: lineNumber, closure: closure)
     }
     
@@ -760,7 +759,7 @@ public class XCGLogger: CustomDebugStringConvertible {
         self.logln(.severe, functionName: functionName, fileName: fileName, lineNumber: lineNumber, closure: closure)
     }
     
-    public func severe(_ functionName: String = #function, fileName: String = #file, lineNumber: Int = #line, closure: @noescape () -> String?) {
+    public func severe(_ functionName: String = #function, fileName: String = #file, lineNumber: Int = #line, closure: () -> String?) {
         self.logln(.severe, functionName: functionName, fileName: fileName, lineNumber: lineNumber, closure: closure)
     }
     
@@ -854,7 +853,7 @@ public class XCGLogger: CustomDebugStringConvertible {
     }
     
     // MARK: - Private methods
-    private func _logln(_ logMessage: String, logLevel: LogLevel = .debug) {
+    fileprivate func _logln(_ logMessage: String, logLevel: LogLevel = .debug) {
         
         var logDetails: XCGLogDetails? = nil
         for logDestination in self.logDestinations {
@@ -887,5 +886,5 @@ public func < (lhs:XCGLogger.LogLevel, rhs:XCGLogger.LogLevel) -> Bool {
 }
 
 func extractClassName(_ someObject: Any) -> String {
-    return (someObject is Any.Type) ? "\(someObject)" : "\(someObject.dynamicType)"
+    return (someObject is Any.Type) ? "\(someObject)" : "\(type(of: someObject))"
 }
